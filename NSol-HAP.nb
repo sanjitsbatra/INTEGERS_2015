@@ -1,0 +1,104 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2682,         94]
+NotebookOptionsPosition[      2292,         75]
+NotebookOutlinePosition[      2677,         92]
+CellTagsIndexPosition[      2634,         89]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Genap", "[", 
+    RowBox[{"a_", ",", "d_", ",", "k_"}], "]"}], ":=", 
+   RowBox[{"NestList", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"#", "+", "d"}], ")"}], "&"}], ",", 
+     RowBox[{"a", "+", "d"}], ",", 
+     RowBox[{"k", "-", "1"}]}], "]"}]}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Genhap", "[", 
+     RowBox[{"a_", ",", "d_", ",", "k_", ",", "h_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"{", "a", "}"}], "\[Union]", 
+     RowBox[{"Genap", "[", 
+      RowBox[{
+       RowBox[{"a", "*", "h"}], ",", "d", ",", "k"}], "]"}]}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Nsol", "[", 
+    RowBox[{"a_", ",", "d_", ",", "k_", ",", "h_", ",", "n_"}], "]"}], " ", ":=",
+    " ", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"CoprimeQ", "[", 
+      RowBox[{"a", ",", "d"}], "]"}], ",", 
+     RowBox[{"Length", "[", 
+      RowBox[{"FrobeniusSolve", "[", 
+       RowBox[{
+        RowBox[{"Genhap", "[", 
+         RowBox[{"a", ",", "d", ",", "k", ",", "h"}], "]"}], ",", "n"}], 
+       "]"}], "]"}], ",", 
+     RowBox[{"-", "\[Infinity]"}]}], "]"}]}], ";"}]}], "Code",
+ CellChangeTimes->{{3.555588340128394*^9, 3.555588386430271*^9}, {
+  3.555588473402581*^9, 3.555588473680133*^9}, {3.5555886188261633`*^9, 
+  3.555588621800989*^9}, {3.5871247183656063`*^9, 3.587124741598569*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Nsol", "[", 
+  RowBox[{"2", ",", "3", ",", "5", ",", "7", ",", "10"}], "]"}]], "Input",
+ CellChangeTimes->{{3.587124707224708*^9, 3.587124715218659*^9}, {
+  3.587124749226905*^9, 3.587124753204159*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.5871247545899*^9}]
+}, Open  ]]
+},
+WindowSize->{1120, 752},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1397, 41, 169, "Code"],
+Cell[CellGroupData[{
+Cell[1979, 65, 226, 4, 43, "Input"],
+Cell[2208, 71, 68, 1, 43, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
